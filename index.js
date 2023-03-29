@@ -37,7 +37,13 @@ app.get('/CV', (req, res) => { res.render('pages/CV') });
 app.get('/index', (req, res) => { res.render('pages/index') });
 app.get('/PPE', (req, res) => { res.render('pages/PPE') });
 app.get('/Lettre_de_motivation', (req, res) => { res.render('pages/Lettre_de_motivation') });
-app.get('/produits', (req, res) => { res.render('pages/produits') });
+app.get('/produits', function (httpRequest, httpResponse, next) {
+    connection.query('select * from Option_de_contact', (err, result, fields) => {
+        console.log(result)
+        httpResponse.render('pages/produits', { Option_de_contact: result })
+    })
+
+});
 app.get('/Panier', (req, res) => { res.render('pages/Panier') });
 app.listen('3003', () => {
     console.log('j ecoute sur le port 3000')
