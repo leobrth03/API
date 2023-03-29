@@ -24,7 +24,7 @@ app.get('/', function (httpRequest, httpResponse, next) {
     connection.query('select * from clients', (err, result, fields) => {
         console.log(result)
         //log de la requete entrante
-        console.log('objet request: ', httpRequest);
+        // console.log('objet request: ', httpRequest);
         //envoie de la reponse http
         httpResponse.render('pages/index')
     })
@@ -37,4 +37,7 @@ app.get('/CV', (req, res) => { res.render('pages/CV') });
 app.get('/index', (req, res) => { res.render('pages/index') });
 app.get('/PPE', (req, res) => { res.render('pages/PPE') });
 app.get('/Lettre_de_motivation', (req, res) => { res.render('pages/Lettre_de_motivation') });
-app.listen('3003');
+app.get('/produits', (req, res) => { res.render('pages/produits') });
+app.listen('3003', () => {
+    console.log('j ecoute sur le port 3000')
+});
