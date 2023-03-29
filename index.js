@@ -38,6 +38,7 @@ app.get('/index', (req, res) => { res.render('pages/index') });
 app.get('/PPE', (req, res) => { res.render('pages/PPE') });
 app.get('/Lettre_de_motivation', (req, res) => { res.render('pages/Lettre_de_motivation') });
 app.get('/produits', (req, res) => { res.render('pages/produits') });
+app.get('/Panier', (req, res) => { res.render('pages/Panier') });
 app.listen('3003', () => {
     console.log('j ecoute sur le port 3000')
 });
