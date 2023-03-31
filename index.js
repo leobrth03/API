@@ -23,9 +23,6 @@ app.set('view engine', 'ejs')
 app.get('/', function (httpRequest, httpResponse, next) {
     connection.query('select * from clients', (err, result, fields) => {
         console.log(result)
-        //log de la requete entrante
-        // console.log('objet request: ', httpRequest);
-        //envoie de la reponse http
         httpResponse.render('pages/index')
     })
 
